@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdv5fxkyo115h"]
+
+[ext_resource type="PackedScene" uid="uid://c8mw2hmp71teo" path="res://scenes/player.tscn" id="1_nwqxs"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_ah2br"]
+[ext_resource type="PackedScene" uid="uid://biopguiosu5l5" path="res://scenes/background.tscn" id="2_g1mgc"]
+[ext_resource type="Script" path="res://scripts/Scripts.gd" id="3_vovfv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nwqxs")]
+unique_name_in_owner = true
+motion_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_ah2br")
+
+[node name="Background" parent="." instance=ExtResource("2_g1mgc")]
+position = Vector2(540, 0)
+
+[node name="Scripts" type="Node" parent="."]
+script = ExtResource("3_vovfv")
+
+[node name="BulletSpawner" type="Node" parent="."]
+unique_name_in_owner = true

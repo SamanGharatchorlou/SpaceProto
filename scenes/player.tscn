@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8mw2hmp71teo"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hemdq"]
+[ext_resource type="Texture2D" uid="uid://ddr2007o80h0h" path="res://assets/tiny_ship4.png" id="1_sxdv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qcdh"]
+size = Vector2(8, 20)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hemdq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sxdv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8qcdh")
+
+[node name="Timer" type="Timer" parent="."]

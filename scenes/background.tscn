@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://biopguiosu5l5"]
+
+[ext_resource type="Texture2D" uid="uid://dipqk6pubawj" path="res://assets/BG.png" id="1_6wj6l"]
+[ext_resource type="Texture2D" uid="uid://t7ilioech7t0" path="res://assets/Stars.png" id="2_mddrw"]
+[ext_resource type="Texture2D" uid="uid://dcyakwvhkg7h4" path="res://assets/Planets.png" id="3_fifni"]
+[ext_resource type="Texture2D" uid="uid://dib2p8kyrofe4" path="res://assets/Meteors.png" id="4_hgv4u"]
+
+[node name="Background" type="Node2D"]
+
+[node name="ParallaxForground" type="ParallaxBackground" parent="."]
+layer = 2
+offset = Vector2(-220, 0)
+transform = Transform2D(1, 0, 0, 1, -220, 0)
+
+[node name="Meteors" type="ParallaxLayer" parent="ParallaxForground"]
+motion_scale = Vector2(1, 2)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxForground/Meteors"]
+position = Vector2(70, -25)
+texture = ExtResource("4_hgv4u")
+flip_v = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BG" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -3
+motion_scale = Vector2(1, 0.1)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BG"]
+texture = ExtResource("1_6wj6l")
+
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 3
+motion_scale = Vector2(1, 0.2)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+texture = ExtResource("2_mddrw")
+
+[node name="Planets" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.3)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Planets"]
+texture = ExtResource("3_fifni")
+
+[node name="Meteors" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.5)
+motion_offset = Vector2(0, 960)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Meteors"]
+texture = ExtResource("4_hgv4u")
